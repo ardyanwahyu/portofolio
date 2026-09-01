@@ -5,7 +5,7 @@
   --borderColor: #f1f1f1;
   --lineColor: #d9d9d9;
 
-  --primaryBackgprundColor: #fff;
+  --primaryBackgroundColor: #fff;
   --secondaryBackgorundCground: #fbfbfb;
   --thirdBackgorundColor: #f5f3fe;
 
@@ -24,7 +24,7 @@
 
 body {
   font-family: sans-serif;
-  background-color: var(--primaryBackgprundColor);
+  background-color: var(--primaryBackgroundColor);
   color: var(--primaryTextColor);
   overflow-x: hidden;
 }
@@ -244,64 +244,82 @@ nav ul li a:hover {
 #about {
   padding: var(--sectionPadding);
   text-align: justify;
-  background-color: var(--primaryBackgprundColor);
+  background-color: var(--primaryBackgroundColor);
 }
 
 /* Experience */
 #experience {
-padding: 80px 0;
+    padding: 50px 0;
 }
 
 .experience-item {
-background: var(--secondaryBackgroundColor);
-border-radius: 12px;
-padding: 30px;
-margin-top: 40px;
-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    background: var(--secondaryBackgorundCground);
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.experience-item:hover {
+    border-color: var(--primaryIconColor);
+    box-shadow: 0 10px 25px rgba(126, 116, 241, 0.2);
+    transform: translateY(-5px);
+}
+
+.experience-item:active {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(126, 116, 241, 0.3);
 }
 
 .experience-header {
-display: flex;
-justify-content: space-between;
-align-items: flex-start;
-gap: 20px;
-margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 15px;
 }
 
 .experience-header h4 {
-font-size: 20px;
-margin-bottom: 5px;
+    font-size: 20px;
+    margin-bottom: 5px;
 }
 
 .experience-company {
-font-weight: 600;
-margin: 0;
+    font-weight: 600;
+    margin: 0;
 }
 
 .experience-date {
-font-size: 14px;
-white-space: nowrap;
+    font-size: 14px;
+    white-space: nowrap;
 }
 
 .experience-item p {
-line-height: 1.7;
+    line-height: 1.7;
 }
 
-.experience-item .portfolio-tags {
-margin-top: 20px;
+.experience-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
 }
 
-@media screen and (max-width: 768px) {
-.experience-header {
-flex-direction: column;
-gap: 5px;
+.experience-dots .dot {
+    width: 8px;
+    height: 8px;
+    background: var(--lineColor);
+    border-radius: 50%;
+    transition: all 0.3s ease;
 }
 
-.experience-date {
-    white-space: normal;
-}
-
-
+.experience-dots .dot.active {
+    width: 20px;
+    border-radius: 10px;
+    background: var(--primaryIconColor);
 }
 
 
@@ -320,7 +338,7 @@ gap: 5px;
 }
 
 .skill-card {
-  background: var(--primaryBackgprundColor);
+  background: var(--primaryBackgroundColor);
   padding: 2.5rem 2rem;
   border-radius: var(--itemBorderRadius);
   border: 1px solid var(--borderColor);
@@ -374,7 +392,7 @@ gap: 5px;
 .service {
   padding: 2.5rem 2rem;
   text-align: center;
-  background: var(--primaryBackgprundColor);
+  background: var(--primaryBackgroundColor);
   border-radius: var(--itemBorderRadius);
   border: 1px solid var(--borderColor);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -414,7 +432,7 @@ gap: 5px;
 }
 
 .portfolio {
-  background: var(--primaryBackgprundColor);
+  background: var(--primaryBackgroundColor);
   border-radius: var(--itemBorderRadius);
   border: 1px solid var(--borderColor);
   overflow: hidden;
@@ -516,4 +534,196 @@ gap: 5px;
 
 .social-links a:hover {
   color: var(--primaryIconColor);
+}
+
+
+@media screen and (max-width: 768px) {
+    .nav {
+        position: relative;
+    }
+
+    .nav nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        background: var(--primaryBackgroundColor);
+        display: none;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        z-index: 100;
+    }
+
+    .nav nav.active {
+        display: block;
+    }
+
+    .nav nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .burger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 101;
+    }
+
+    .burger div {
+        width: 25px;
+        height: 3px;
+        background: #000;
+        margin: 0;
+    }
+}
+
+/* Experience Clickable */
+.experience-item {
+    background: var(--secondaryBackgorundCground);
+    border-radius: 12px;
+    padding: 30px;
+    margin-top: 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+/* Highlight saat diarahkan / disentuh */
+.experience-item:hover {
+    border-color: var(--primaryIconColor);
+    box-shadow: 0 10px 25px rgba(126, 116, 241, 0.2);
+    transform: translateY(-5px);
+}
+
+/* Saat diklik */
+.experience-item:active {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(126, 116, 241, 0.3);
+}
+
+.experience-click {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--primaryIconColor);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Experience Modal */
+.experience-modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.experience-modal-content {
+    position: relative;
+    background: var(--primaryBackgprundColor);
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 30px;
+    border-radius: var(--itemBorderRadius);
+}
+
+.experience-modal-content h3 {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.experience-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 35px;
+    cursor: pointer;
+    color: var(--secondaryTextColor);
+}
+
+.experience-close:hover {
+    color: var(--primaryIconColor);
+}
+
+/* Slider Experience */
+
+.experience-slider {
+    width: 100%;
+    height: 220px;
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+    background: #f5f5f5;
+}
+
+.experience-slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease-in-out;
+}
+
+.experience-slides img {
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    .experience-modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .experience-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* CARD */
+
+.experience-item,
+.skill-card,
+.service,
+.portfolio {
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+/* hover */
+.experience-item:hover,
+.skill-card:hover,
+.service:hover,
+.portfolio:hover {
+    border-color: var(--primaryIconColor);
+    box-shadow: 0 10px 25px rgba(126, 116, 241, 0.2);
+    transform: translateY(-5px);
+}
+
+/* Saat benar-benar ditekan */
+.experience-item:active,
+.skill-card:active,
+.service:active,
+.portfolio:active {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(126, 116, 241, 0.3);
 }

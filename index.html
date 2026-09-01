@@ -50,39 +50,63 @@
     </section>
 
     <!-- Experience Section -->
-
     <section id="experience">
         <div class="experience main-container">
             <h3 class="pre-title">Pengalaman</h3>
             <h1 class="section-title">Experience</h1>
 
         <div class="experience-item">
-            <div class="experience-header">
-                <div>
-                    <h4>IT Staff Intern</h4>
-                    <p class="experience-company">PT Jasa Raharja</p>
-                </div>
-                <span class="experience-date">[Juli 2025] – [Agustus 2025]</span>
-            </div>
-
-            <p>
-                Berkontribusi dalam pengembangan sistem informasi penyewaan gedung
-                serta membantu pengelolaan data dan proses digitalisasi administrasi.
-            </p>
-
-            <div class="portfolio-tags">
-                <div>PHP Laravel</div>
-                <div>MySQL</div>
-                <div>API Integration</div>
-            </div>
+    <div class="experience-header">
+        <div>
+            <h4>IT Staff Intern</h4>
+            <p class="experience-company">PT Jasa Raharja Cabang Semarang</p>
         </div>
+
+        <p class="experience-date">Juli - Agustus 2025</p>
+    </div>
+
+    <p>
+        Mengembangkan aplikasi berbasis web menggunakan Laravel, serta membantu pengolahan, pengelolaan, dan pemantauan data untuk mendukung kebutuhan operasional perusahaan.
+    </p>
+
+    <!-- Experience Gallery -->
+    <div class="experience-slider">
+        <div class="experience-slides">
+            <img src="./images/experience/JR1.jpg" alt="Experience 1">
+            <img src="./images/experience/JR2.jpg" alt="Experience 2">
+            <img src="./images/experience/JR3.jpg" alt="Experience 3">
+        </div>
+    </div>
+
+    <div class="experience-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</div>
+
     </div>
 
     </section>
 
+    <!-- Experience Modal -->
+    <div id="experience-modal" class="experience-modal">
+        <div class="experience-modal-content">
+
+            <span class="experience-close" onclick="closeExperience()">&times;</span>
+
+            <h3>Dokumentasi Pengalaman</h3>
+
+            <div class="experience-gallery">
+                <img src="./images/experience/JR1.jpg" alt="Dokumentasi PT Jasa Raharja">
+                <img src="./images/experience/JR2.jpg" alt="Dokumentasi PT Jasa Raharja">
+                <img src="./images/experience/JR3.jpg" alt="Dokumentasi PT Jasa Raharja">
+            </div>
+
+        </div>
+    </div>
 
     <!-- Skills Section -->
-
     <section id="skills">
         <div class="services main-container">
             <h3 class="pre-title">Keahlian</h3>
@@ -299,7 +323,59 @@
     </div>
     </section>
 
+    <script>
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav nav');
 
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+    </script>
+
+    <script>
+    function openExperience() {
+        document.getElementById("experience-modal").style.display = "flex";
+    }
+
+    function closeExperience() {
+        document.getElementById("experience-modal").style.display = "none";
+    }
+
+    window.addEventListener("click", function(event) {
+        const modal = document.getElementById("experience-modal");
+
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+</script>
+
+<script>
+const slides = document.querySelector('.experience-slides');
+const dots = document.querySelectorAll('.experience-dots .dot');
+
+let currentSlide = 0;
+
+function showExperienceSlide(index) {
+    currentSlide = index;
+
+    slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentSlide);
+    });
+}
+
+setInterval(() => {
+    currentSlide++;
+
+    if (currentSlide >= dots.length) {
+        currentSlide = 0;
+    }
+
+    showExperienceSlide(currentSlide);
+}, 4000);
+</script>
 
 </body>
 </html>
