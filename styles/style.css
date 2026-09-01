@@ -140,6 +140,7 @@ a {
   align-items: center;
 }
 
+
 .logo {
   display: flex;
   align-items: center;
@@ -718,5 +719,159 @@ nav ul li a:hover {
 
     .experience-dots {
         margin-top: 12px;
+    }
+}
+
+/* ============================= */
+/* MOBILE BURGER MENU */
+/* ============================= */
+
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.burger span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background-color: var(--primaryTextColor);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* MOBILE */
+@media screen and (max-width: 768px) {
+
+    .nav {
+        padding: 1.5rem 0;
+    }
+
+    /* Tampilkan burger */
+    .burger {
+        display: flex;
+    }
+
+    /* Sembunyikan menu normal */
+    .nav ul {
+        display: none;
+        position: absolute;
+        top: 75px;
+        right: 0;
+        width: 200px;
+        background-color: var(--primaryBackgroundColor);
+        padding: 1rem;
+        border-radius: var(--itemBorderRadius);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        gap: 1rem;
+        z-index: 100;
+    }
+
+    /* Saat menu dibuka */
+    .nav ul.active {
+        display: flex;
+    }
+
+    .nav ul li {
+        width: 100%;
+    }
+
+    .nav ul li a {
+        display: block;
+        width: 100%;
+        padding: 0.5rem;
+    }
+}
+
+/* =================================
+   MOBILE BURGER MENU
+================================= */
+
+.burger {
+    display: none;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    z-index: 1001;
+}
+
+.burger div {
+    width: 24px;
+    height: 3px;
+    background-color: var(--primaryTextColor);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media screen and (max-width: 768px) {
+
+    .nav {
+        position: relative;
+        padding: 1.5rem 0;
+    }
+
+    /* Tampilkan burger */
+    .burger {
+        display: flex;
+    }
+
+    /* Sembunyikan menu desktop */
+    .nav nav ul {
+        display: none;
+        position: absolute;
+        top: 75px;
+        right: 0;
+
+        width: 220px;
+
+        background-color: var(--primaryBackgroundColor);
+
+        padding: 1rem;
+
+        border-radius: var(--itemBorderRadius);
+
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+
+        flex-direction: column;
+        gap: 0.5rem;
+
+        z-index: 1000;
+    }
+
+    /* Menu ketika burger diklik */
+    .nav nav ul.active {
+        display: flex;
+    }
+
+    .nav nav ul li {
+        width: 100%;
+    }
+
+    .nav nav ul li a {
+        display: block;
+        width: 100%;
+        padding: 0.7rem 0.8rem;
+    }
+
+    /* Resume */
+    .nav nav ul li .btn {
+        width: 100%;
+        text-align: center;
     }
 }
