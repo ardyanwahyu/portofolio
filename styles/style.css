@@ -693,7 +693,7 @@ nav ul li a:hover {
     .experience-item > p {
         font-size: 14px;
         line-height: 1.7rem;
-        text-align: left;
+        text-align: justify;
         margin-bottom: 15px;
     }
 
