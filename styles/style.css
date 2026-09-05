@@ -221,8 +221,72 @@ nav ul li a:hover {
 /* About Me Section */
 #about {
   padding: var(--sectionPadding);
-  text-align: justify;
   background-color: var(--primaryBackgroundColor);
+}
+
+/* Paragraf Profil */
+#about > p {
+  margin: 0 0 2.5rem;
+  color: var(--secondaryTextColor);
+  font-size: 1rem;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.about-education {
+  margin: 0;
+}
+
+/* Pendidikan */
+.about-education {
+  width: 100%;
+  margin: 0;
+}
+
+
+.about-education h4 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: var(--primaryTextColor);
+}
+
+/* Card Pendidikan */
+.education-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+
+  padding: 1.3rem 1.5rem;
+
+  background-color: var(--primaryBackgroundColor);
+  border: 1px solid var(--borderColor);
+  border-radius: var(--itemBorderRadius);
+
+  transition: 0.3s ease;
+}
+
+/* Gelar */
+.education-item strong {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--primaryTextColor);
+  font-size: 1rem;
+}
+
+/* Universitas */
+.education-item p {
+  margin: 0;
+  color: var(--secondaryTextColor);
+  font-size: 0.9rem;
+}
+
+/* Tahun */
+.education-item span {
+  color: var(--primaryIconColor);
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 /* Experience */
@@ -271,7 +335,9 @@ nav ul li a:hover {
 }
 
 .experience-date {
-    font-size: 14px;
+    color: var(--primaryIconColor);
+    font-size: 0.9rem;
+    font-weight: 600;
     white-space: nowrap;
 }
 
