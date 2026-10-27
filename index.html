@@ -18,8 +18,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#skills">Skills</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portofolio">Portofolio</a></li>
+                    <li><a href="#portofolio">Projects</a></li>
                     <li><a href="#contact">Kontak</a></li>
                     <li><a href="./CV_Ardyan_Wahyu_Anggoro.pdf" target="_blank"><button class="btn">Resume</button></a></li>
                 </ul>
@@ -34,8 +33,11 @@
     <section id="hero" class="main-container">
         <div class="hero-left">
             <h3 class="pre-title">Halo, Saya</h3>
-            <h1 class="hero-name">Ardyan <span>Wahyu</span> Anggoro</h1>
-            <p>Lulusan Teknik Informatika dengan minat besar pada Analisis Data dan Business Intelligence. Berpengalaman dalam pengelolaan basis data, pelaporan, dan solusi berbasis data untuk mendukung pengambilan keputusan.</p>
+            <h1 class="hero-name">
+                <span id="typing-name"></span><span class="typing-cursor">|</span>
+            </h1>
+            <p>Lulusan Teknik Informatika dengan pengalaman dalam analisis sistem,
+                analisis proses bisnis, dan pengembangan sistem berbasis web</p>
         </div>
         <div class="hero-right">
             <img src="./images/pas foto.jpg" alt="Ilustrasi Ardyan Wahyu">
@@ -46,7 +48,11 @@
     <section id="about" class="main-container">
         <h3 class="pre-title">Tentang Saya</h3>
         <h1 class="section-title">Profil Singkat</h1>
-        <p>Lulusan Sarjana Teknik Informatika Universitas Dian Nuswantoro yang memiliki ketertarikan mendalam pada Analisis Data, Business Intelligence, dan tata kelola informasi. Berbekal kemampuan analitis yang kuat serta pengalaman dalam pengelolaan basis data dan pengembangan sistem informasi, saya berfokus untuk mengolah data guna mendukung efisiensi operasional dan pengambilan keputusan bisnis.</p>
+        <p>Lulusan S1 Teknik Informatika Universitas Dian Nuswantoro 
+            yang terbiasa menyusun dokumentasi kebutuhan sistem, 
+            membangun aplikasi web dengan Laravel dan MySQL, 
+            serta mengelola data transaksi dan pelaporan. 
+            Teliti, analitis, dan siap belajar teknologi baru.</p>
         
         <div class="about-education">
             <h4>Pendidikan</h4>
@@ -79,7 +85,10 @@
     </div>
 
     <p>
-        Mengembangkan aplikasi berbasis web menggunakan Laravel, serta membantu pengolahan, pengelolaan, dan pemantauan data untuk mendukung kebutuhan operasional perusahaan.
+       Menganalisis proses penyewaan gedung dan ruangan yang masih manual, 
+       mendokumentasikan kebutuhan sistem dan alur proses, 
+       serta mengembangkan sistem informasi penyewaan berbasis web menggunakan Laravel,
+       Tailwind CSS, dan MySQL.
     </p>
 
     <!-- Experience Gallery -->
@@ -152,8 +161,8 @@
 
                 <p>
                     PHP, Laravel, JavaScript, HTML & CSS, MySQL, SQL,
-                    Git/GitHub, Power BI, Microsoft Excel, Figma,
-                    dan Google Workspace.
+                    Git/GitHub, Google Workspace, Microsoft Excel, Figma,
+                    dan Power BI.
                 </p>
 
             </div>
@@ -181,10 +190,10 @@
                 <h4>Analysis & System</h4>
 
                 <p>
-                    System Analysis, Requirements Analysis,
-                    Business Process Analysis, Data Analysis,
-                    System Integration, SDLC, Software Testing,
-                    dan Technical Documentation.
+                   Business Process Analysis, Requirements Analysis,
+                   Process Modeling (Flowchart), Data Modeling,
+                   SDLC, Software Testing,
+                   Technical Documentation, Data Analysis.
                 </p>
 
             </div>
@@ -215,7 +224,7 @@
 
                 <p>
                     Problem Solving, Analytical Thinking, Communication,
-                    Teamwork, Adaptability, dan Attention to Detail.
+                    Teamwork, Time management, Adaptability, dan Attention to Detail.
                 </p>
 
             </div>
@@ -247,7 +256,9 @@
                             <div>Laravel</div>
                             <div>Reporting</div>
                         </div>
-                        <p>Sistem manajemen penjualan berbasis web untuk pengelolaan data, pemantauan stok real-time, dan pelaporan harian operasional.</p>
+                        <p>Sistem informasi penjualan LPG berbasis web yang mencakup pengelolaan inventori, 
+                            transaksi penjualan, status pembayaran, pemantauan stok real-time, 
+                            dan pelaporan harian. Dilengkapi dokumentasi dan pengujian black box.</p>
                     </div>
                 </div>
 
@@ -281,8 +292,9 @@
                     </div>
 
                     <p>
-                        Sistem penjadwalan layanan kesehatan untuk mengelola data pengguna,
-                        mengurangi konflik jadwal, dan menghasilkan informasi monitoring operasional.
+                        Sistem penjadwalan layanan kesehatan berbasis web dengan fitur pendaftaran pasien, 
+                        pengelolaan janji temu, dan ketersediaan staf, 
+                        untuk mengurangi bentrokan jadwal dan mendukung pemantauan operasional.
                     </p>
                 </div>
 
@@ -313,11 +325,13 @@
                     </div>
 
                     <div class="portfolio-tags">
+                        <div>Laravel</div>
                         <div>MySQL</div>
-                        <div>API Integration</div>
                     </div>
 
-                    <p> Transformasi proses penyewaan manual menjadi digital terintegrasi untuk mendukung pengelolaan data ruangan dan laporan penyewaan di PT Jasa Raharja. </p>
+                    <p> Sistem informasi penyewaan gedung dan ruangan berbasis web 
+                        yang dikembangkan selama magang di PT Jasa Raharja, 
+                        mencakup pengelolaan data ruangan, verifikasi transaksi, dan pelaporan penyewaan. </p>
 
                 <div class="portfolio-github"> <p> Lihat project lainnya di GitHub. </p>
 
@@ -420,6 +434,50 @@
 
     </div>
     </section>
+
+    <script>
+    const nameParts = [
+        { text: "Ardyan ", purple: false },
+        { text: "Wahyu", purple: true },
+        { text: " Anggoro", purple: false }
+    ];
+
+    const typingElement = document.getElementById("typing-name");
+    let partIndex = 0;
+    let charIndex = 0;
+
+    function typeName() {
+        if (partIndex >= nameParts.length) return;
+
+        const part = nameParts[partIndex];
+        let span = typingElement.querySelector(".part-" + partIndex);
+
+        if (!span) {
+            span = document.createElement("span");
+            span.className = "part-" + partIndex;
+
+            if (part.purple) {
+                span.style.color = "var(--primaryIconColor)";
+            }
+
+            typingElement.appendChild(span);
+        }
+
+        span.textContent += part.text.charAt(charIndex);
+        charIndex++;
+
+        if (charIndex >= part.text.length) {
+            partIndex++;
+            charIndex = 0;
+        }
+
+        if (partIndex < nameParts.length) {
+            setTimeout(typeName, 120);
+        }
+    }
+
+    typeName();
+</script>
 
     <script>
         const burger = document.querySelector('.burger');
